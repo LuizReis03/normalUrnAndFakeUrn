@@ -1,0 +1,113 @@
+def urna(voto):
+  
+    if voto == 6:
+      return 6
+    if voto == 1:
+      return 1
+    elif voto == 2:
+      return 2
+    elif voto == 3:
+      return 3
+    elif voto == 4:
+      return 4
+    elif voto == 5:
+      return 5
+    else:
+      print("Opção inválida\n")
+      return 0
+      
+
+lula = 0
+bolso = 0
+monark = 0
+nulo = 0
+branco = 0
+qtdeVotos = 0
+
+print("1-Urna normal \n2-Urna fake")
+tipoUrna = int(input("Deseja qual urna: "))
+
+if tipoUrna == 1:
+  while True:
+    print("-----URNA ELETRÔNICA-----\n")
+    print("Candidatos: \n1-Lula \n2-Bolso \n3-Monark   \n4-Nulo \n5-Branco \n6-Sair")
+    voto = int(input("Digite a opção desejada: "))
+  
+    if urna(voto) == 0:
+      break
+    elif urna(voto) == 1:
+      print("Voto realizado com sucesso!!\n")
+      lula += 1
+    elif urna(voto) == 2:
+      print("Voto realizado com sucesso!!\n")
+      bolso += 1
+    elif urna(voto) == 3:
+      print("Voto realizado com sucesso!!\n")
+      monark += 1
+    elif urna(voto) == 4:
+      print("Voto realizado com sucesso!!\n")
+      nulo += 1
+    elif urna(voto) == 5:
+      print("Voto realizado com sucesso!!\n")
+      branco += 1
+    elif urna(voto) == 6:
+      print("Urna encerrada!!\n")
+      qtdeVotos = lula + bolso + monark + nulo + branco
+      print("\nResultados da urna:\n")
+      print("Votos para Lula: ", round((lula*100)/qtdeVotos), "%")
+      print("Votos para Bolso: ", round((bolso*100)/qtdeVotos), "%")
+      print("Votos para Monark: ", round((monark*100)/qtdeVotos), "%")
+      print("Votos nulos: ", round((nulo*100)/qtdeVotos), "%")
+      print("Votos brancos: ", round((branco*100)/qtdeVotos), "%")
+      break
+
+elif tipoUrna == 2:
+  while True:
+    print("-----URNA ELETRÔNICA-----\n")
+    print("Candidatos: \n1-Lula \n2-Bolso \n3-Monark   \n4-Nulo \n5-Branco \n6-Sair")
+    voto = int(input("Digite a opção desejada: "))
+    if urna(voto) == 0:
+      break
+    elif urna(voto) == 1:
+      print("Voto realizado com sucesso!!\n")
+      lula += 1
+    elif urna(voto) == 2:
+      print("Voto realizado com sucesso!!\n")
+      bolso += 1
+    elif urna(voto) == 3:
+      print("Voto realizado com sucesso!!\n")
+      monark += 1
+    elif urna(voto) == 4:
+      print("Voto realizado com sucesso!!\n")
+      nulo += 1
+    elif urna(voto) == 5:
+      print("Voto realizado com sucesso!!\n")
+      branco += 1
+    elif urna(voto) == 6:
+      if bolso > monark:
+        campeao = bolso
+        bolso = monark 
+        monark = campeao
+      if lula > monark:
+        campeao = lula
+        lula = monark 
+        monark = campeao
+      if branco > monark:
+        campeao = branco
+        branco = monark 
+        monark = campeao
+      if nulo > monark:
+        campeao = nulo
+        nulo = monark 
+        monark = campeao
+        
+      print("Urna encerrada!!\n")
+      qtdeVotos = lula + bolso + monark + nulo + branco
+      print("\nResultados da urna:\n")
+      print("Votos para Lula: ", round((lula*100)/qtdeVotos), "%")
+      print("Votos para Bolso: ", round((bolso*100)/qtdeVotos), "%")
+      print("Votos para Monark: ", round((monark*100)/qtdeVotos), "%")
+      print("Votos nulos: ", round((nulo*100)/qtdeVotos), "%")
+      print("Votos brancos: ", round((branco*100)/qtdeVotos), "%")
+      break
+  
